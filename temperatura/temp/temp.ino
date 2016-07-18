@@ -1,10 +1,12 @@
 float tempC;
 int tempPin=0;
 int calefaccion=12;
+int ventilador=13;
 void setup()
 {
   Serial.begin(9600);
   pinMode(calefaccion,OUTPUT);
+  pinMode(ventilador,OUTPUT);
 }
 void loop()
 {
@@ -20,6 +22,9 @@ void loop()
     }
     else{
       digitalWrite(calefaccion,LOW);
+    if(tempC>27){
+      digitalWrite(ventilador,HIGH);
       }
+    } 
 }
 
