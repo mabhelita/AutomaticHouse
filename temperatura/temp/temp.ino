@@ -1,8 +1,10 @@
 float tempC;
 int tempPin=0;
+int calefaccion=12;
 void setup()
 {
   Serial.begin(9600);
+  pinMode(calefaccion,OUTPUT);
 }
 void loop()
 {
@@ -13,5 +15,11 @@ void loop()
    Serial.println("   ");
    
    delay(5000);  
+   if(tempC<20){
+    digitalWrite(calefaccion,HIGH);
+    }
+    else{
+      digitalWrite(calefaccion,LOW);
+      }
 }
 
