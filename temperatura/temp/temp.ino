@@ -45,6 +45,17 @@ void loop()
   valorLDR=analogRead(pinLDR);
   // devolver el valor al monitor
   Serial.println(valorLDR);
+
+  // encender l aluz de acuerdo al valor del LDR
+   if(valorLDR > 100)
+  {
+    digitalWrite(pinLed1, HIGH);
+  }
+  if(valorLDR > 200)
+  {
+    digitalWrite(pinLed2, HIGH);
+  }
+  delay(200);
 }
 
 
